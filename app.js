@@ -1,9 +1,9 @@
-// const name = "usama"
-// if(name=="usam")
-// console.log("abc")
-const names=require('./Name')
-const sayHi= require('./functions')
-console.log(names)
-const {jhon,piter} =names
-sayHi(jhon)
-sayHi(piter)
+const {readFileSync,writeFileSync} = require('fs')
+const first = readFileSync('./content/first.txt','utf8')
+const second = readFileSync('./content/second.txt','utf8')
+
+console.log(first ,second)
+writeFileSync(
+    './content/result-sync.txt',
+    `result is : ${first} : ${second}`,{flag:'a'} 
+)
